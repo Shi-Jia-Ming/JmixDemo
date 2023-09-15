@@ -72,6 +72,7 @@ public class User implements JmixUserDetails, HasTimeZone {
     @Composition
     @OneToMany(mappedBy = "user")
     private List<UserStep> steps;
+    // TODO 删除 user 的时候出现问题
 
     @Column(name = "JOINING_DATE")
     private LocalDate joiningDate;

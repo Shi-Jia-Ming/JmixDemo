@@ -1,6 +1,7 @@
 package com.company.jmixdemo.entity;
 
 import io.jmix.core.entity.annotation.JmixGeneratedValue;
+import io.jmix.core.metamodel.annotation.InstanceName;
 import io.jmix.core.metamodel.annotation.JmixEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -44,6 +45,11 @@ public class UserStep {
     @Column(name = "SORT_VALUE", nullable = false)
     @NotNull
     private Integer sortValue;
+
+    @InstanceName
+    public String getInstanceName() {
+        return step.getName();
+    }
 
     public Integer getSortValue() {
         return sortValue;
