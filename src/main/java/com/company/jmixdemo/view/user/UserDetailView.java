@@ -1,5 +1,6 @@
 package com.company.jmixdemo.view.user;
 
+import com.company.jmixdemo.entity.OnboardingStatus;
 import com.company.jmixdemo.entity.User;
 import com.company.jmixdemo.view.main.MainView;
 import com.vaadin.flow.component.combobox.ComboBox;
@@ -47,6 +48,10 @@ public class UserDetailView extends StandardDetailView<User> {
         usernameField.setReadOnly(false);
         passwordField.setVisible(true);
         confirmPasswordField.setVisible(true);
+
+        // 为 OnboardingStatus 属性设置初始值
+        User user = event.getEntity();
+        user.setOnboardingStatus(OnboardingStatus.NOT_STARTED);
     }
 
     @Subscribe
